@@ -1,0 +1,9 @@
+url:
+  body_api: https://reqres.in/api/
+  body: https://reqres.in/
+  selenium:
+    heroku: https://www.heroku.com/
+    benhowdle: https://benhowdle.us20.list-manage.com/subscribe
+    swagger_dock: https://reqres.in/api-docs/
+    sailsjs: https://sailsjs.com/
+    payment: https://checkout.stripe.com/

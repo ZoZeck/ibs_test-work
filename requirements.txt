@@ -1,0 +1,3 @@
+pytest==7.1.3
+PyYAML==6.0
+chromedriver-py==113.0.5672.63
