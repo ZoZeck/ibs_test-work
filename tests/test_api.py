@@ -2,7 +2,7 @@ from requests import put, delete, patch, post, get
 import pytest
 
 def gen_url(config, path):
-    return f'{config["url"]["body_api"]}{path}'
+    return f'{config["main_url_api"]}{path}'
 
 @pytest.mark.parametrize('path, code',[('users?page=2', 200), ('users/2', 200), ('users/23', 404),
                                        ('unknown', 200), ('unknown/2', 200), ('unknown/23', 404)])

@@ -1,8 +1,10 @@
 import json
+import yaml
 import pytest
 
 from conftest import Driver
 from requests import request
+from config_reader import config
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -12,10 +14,9 @@ from selenium.webdriver.support import expected_conditions as EC
 
 def test_similarity():
     data = []
+    driver = Driver() 
 
-    driver = Driver()
-    
-    driver.get('https://reqres.in')
+    driver.get(config()['main_url'])
 
     for element in driver.find_elements(By.XPATH, "//div[@class = 'endpoints']//ul//li"):
         element.click()
@@ -41,6 +42,7 @@ def test_similarity():
         code = int(driver.find_element(By.XPATH, "//*[@data-key = 'response-code']").text)
 
         yield req.status_code, code, req.text if len(req.text) > 0 else '{' + '}', response
+
 
 
 @pytest.mark.parametrize('code_req, code_sel, response_req, response_sel', test_similarity())
