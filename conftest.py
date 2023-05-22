@@ -1,16 +1,21 @@
-import yaml
 import pytest
 
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
+from config_reader import config as cfg
+
+class Driver(webdriver.Chrome):
+    def __init__(self):
+        options = Options()
+        options.add_argument("--start-maximized")
+        webdriver.Chrome.__init__(self, service=Service(ChromeDriverManager().install()), options=options)
 
 @pytest.fixture
 def driver():
-    driver_service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=driver_service)
-    driver.maximize_window()
+    driver = Driver()
 
     yield driver
 
@@ -18,6 +23,4 @@ def driver():
 
 @pytest.fixture
 def config():
-    with open('config.yml') as yml:
-        config = yaml.safe_load(yml)
-        return config
+    return cfg()

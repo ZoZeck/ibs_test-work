@@ -74,7 +74,7 @@ class MainPage(BasePage):
 
         self.window_hendler(main_window)
 
-        assert self.driver.current_url.startswith(config['additional_url']['benhowdle'])
+        assert self.driver.current_url.startswith(config['additional_url']['benhowdle_subscribe'])
         assert self.element_is_visible(SubscribeLocators.ERROR_MESSAGE)
 
 
@@ -89,7 +89,7 @@ class MainPage(BasePage):
 
         self.window_hendler(main_window)
 
-        assert self.driver.current_url.startswith(config['additional_url']['benhowdle'])
+        assert self.driver.current_url.startswith(config['additional_url']['benhowdle_subscribe'])
         assert self.element_is_visible(SubscribeLocators.RETURN_BUTTON)
         
 
@@ -108,4 +108,4 @@ class MainPage(BasePage):
     def designed_by(self, config):
         self.element_is_visible(MainLocators.DESIGNED_BY).click()
 
-        assert self.url_check(config['additional_url']['benhowdle'])
+        assert self.url_check(config['additional_url']['benhowdle_resume'])

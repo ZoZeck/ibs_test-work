@@ -2,11 +2,11 @@ main_url: https://reqres.in/
 main_url_api: https://reqres.in/api/
 
 additional_url:
-  benhowdle: https://benhowdle.us20.list-manage.com/subscribe
+  benhowdle_subscribe: https://benhowdle.us20.list-manage.com/subscribe
   heroku: https://www.heroku.com/
   payment_page: https://checkout.stripe.com/
   swagger_dock: https://reqres.in/api-docs/
   sailsjs: https://sailsjs.com/
-  benhowdle: https://benhowdle.im/
+  benhowdle_resume: https://benhowdle.im/
   
-email: reqrestestuser-first@gmail.com
+email: reqrestestuser-fourth@gmail.com
